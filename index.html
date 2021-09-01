@@ -188,17 +188,17 @@ border-radius:10px;
 
           function leftApi(){
            var frontdata ;
-          fetch('https://goweather.herokuapp.com/weather/india')
+          fetch('http://api.citybik.es/v2/networks')
           .then(response => response.json())
-         .then(json => document.getElementById("left").innerHTML = "wether api data temperature : "+json.temperature)
+         .then(json => document.getElementById("left").innerHTML = "City name : "+ json.networks[0].location.city)
          }
          leftApi();
 
           function rightApi(){
            var frontdata ;
-          fetch('https://goweather.herokuapp.com/weather/india')
+          fetch('http://api.citybik.es/v2/networks')
           .then(response => response.json())
-         .then(json => document.getElementById("right").innerHTML = "wether api cloude data : "+json.description)
+         .then(json => document.getElementById("right").innerHTML = "City Longitute : "+json.networks[0].location.longitude)
          }
 
          rightApi();
